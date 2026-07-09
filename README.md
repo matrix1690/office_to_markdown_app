@@ -6,6 +6,18 @@
 
 A simple Streamlit web application that converts Microsoft Office documents and other file formats to Markdown using Microsoft's [MarkItDown](https://github.com/microsoft/markitdown) package.
 
+## 🚀 Looking for a better converter? I built two!
+
+This repo remains available as a simple open-source demo — but I've since built two **much more robust converters** with more formats and more features:
+
+| | Tool | Why you'll like it |
+|:-:|------|--------------------|
+| 🌐 | **[Free Online Converter](https://pythonandvba.com/office-to-markdown-converter/)** | Convert Word, Excel, PowerPoint, PDF, Outlook & 20+ other formats right in your browser. Drag & drop, then copy or download the result — completely free, no install or sign-up needed. |
+| 🖥️ | **[Office2MD — Desktop App](https://pythonandvba.com/office2md)** | Runs 100% locally — **your files never leave your computer**. Batch-convert multiple files at once, offline OCR for scanned PDFs & images, 30+ supported formats. |
+
+> [!TIP]
+> Working with sensitive or confidential documents? Use **[Office2MD](https://pythonandvba.com/office2md)** — all conversion happens offline on your machine, no cloud uploads.
+
 ## Features
 
 - Convert various file formats to Markdown:

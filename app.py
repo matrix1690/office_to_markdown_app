@@ -13,6 +13,10 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
+# Newer, more capable converters to promote alongside this demo app
+WEB_CONVERTER_URL = "https://pythonandvba.com/office-to-markdown-converter/"
+DESKTOP_APP_URL = "https://pythonandvba.com/office2md"
+
 
 # Helper functions
 def get_file_extension(filename):
@@ -120,6 +124,41 @@ def get_supported_formats():
     }
 
 
+def render_promo_banner():
+    """Render a banner promoting the newer web and desktop converters."""
+    with st.container(border=True):
+        st.markdown("#### 🚀 Newer & better versions available!")
+        st.markdown(
+            "This app is a simple demo. For more formats, more features, "
+            "and a smoother experience, check out my newer tools:"
+        )
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.markdown(
+                "**🌐 Free Online Converter**  \n"
+                "20+ formats (Word, Excel, PowerPoint, PDF, Outlook & more) — "
+                "drag & drop, no install or sign-up needed."
+            )
+            st.link_button(
+                "Try the Online Converter",
+                WEB_CONVERTER_URL,
+                use_container_width=True,
+                type="primary",
+            )
+        with col2:
+            st.markdown(
+                "**🖥️ Office2MD Desktop App**  \n"
+                "Runs 100% locally — your files never leave your computer. "
+                "Batch conversion & offline OCR included."
+            )
+            st.link_button(
+                "Get the Desktop App",
+                DESKTOP_APP_URL,
+                use_container_width=True,
+            )
+
+
 def main():
     # Initialize session state
     if "markdown_content" not in st.session_state:
@@ -130,6 +169,8 @@ def main():
     # Header
     st.title("Office to Markdown")
     st.image("OfficeToMD_Logo.png")
+
+    render_promo_banner()
 
     # Sidebar
     with st.sidebar:
@@ -143,6 +184,18 @@ def main():
                 st.write(f"**{category}**")
                 for format_name in info["formats"]:
                     st.write(f"- {format_name}")
+
+        # Promote the newer converters
+        st.sidebar.markdown("---")
+        st.sidebar.markdown("### 🚀 Better Converters")
+        st.sidebar.markdown(
+            f"🌐 [Free Online Converter]({WEB_CONVERTER_URL})  \n"
+            "More formats, no install or sign-up"
+        )
+        st.sidebar.markdown(
+            f"🖥️ [Office2MD Desktop App]({DESKTOP_APP_URL})  \n"
+            "100% offline & private, batch conversion"
+        )
 
         # Add branding at the bottom of the sidebar
         st.sidebar.markdown("---")
